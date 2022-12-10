@@ -13,8 +13,9 @@ List<Day1Part1>? DoDay1Part1()
     var tmpList = new List<Day1Part1>();
 
     string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+    string txtFilePath = path.Replace("\\bin", "\\Assets\\Day1 input.txt");
 
-    string[] lines = System.IO.File.ReadAllLines(@".\Assets\Day1 input.txt");   //this is causing file not found
+    string[] lines = System.IO.File.ReadAllLines(txtFilePath);   //this is causing file not found
 
     return tmpList;
 }
