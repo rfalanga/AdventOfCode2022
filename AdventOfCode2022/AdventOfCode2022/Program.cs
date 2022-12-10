@@ -17,5 +17,8 @@ List<Day1Part1>? DoDay1Part1()
 
     string[] lines = File.ReadAllLines(txtFilePath);
 
+    //read through data, populating the list as needed
+
+
     return tmpList;
 }
