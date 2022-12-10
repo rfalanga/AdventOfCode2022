@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2022
+﻿namespace AdventOfCode2022
 {
     internal class Day1Part1
     {
@@ -15,7 +9,6 @@ namespace AdventOfCode2022
             Calories= new List<int>();
         }
 
-        public int TotalCalories()
-        { return Calories.Sum(); }
+        public int TotalCalories() => Calories.Sum();
     }
 }
