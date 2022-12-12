@@ -11,10 +11,7 @@ List<ElfFood> DoDay1Part1()
 {
     var tmpList = new List<ElfFood>();
 
-    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-    string txtFilePath = path.Replace("\\bin", "\\Assets\\Day1 input.txt");
-
-    string[] lines = File.ReadAllLines(txtFilePath);
+    string[] lines = ReadInputFile();
 
     //read through data, populating the list as needed
     int position = 0;
@@ -48,4 +45,13 @@ int MaximumCalories(List<ElfFood> list)
     }
 
     return max;
+}
+
+static string[] ReadInputFile()
+{
+    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+    string txtFilePath = path.Replace("\\bin", "\\Assets\\Day1 input.txt");
+
+    string[] lines = File.ReadAllLines(txtFilePath);
+    return lines;
 }
