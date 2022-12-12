@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2022
 {
-    internal class ElfFood : IComparable<ElfFood>
+    public class ElfFood : IComparable<ElfFood>
     {
         public List<int> Calories { get; set; }
 
