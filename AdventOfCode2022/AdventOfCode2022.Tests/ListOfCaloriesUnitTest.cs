@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2022.Tests
+﻿namespace AdventOfCode2022.Tests
 {
     public class ListOfCaloriesUnitTest
     {
@@ -27,12 +21,18 @@ namespace AdventOfCode2022.Tests
             Elf3.Calories.Add(9);
             Elf3.Calories.Add(10);
 
+            // construct a list of ElfFood
             var Elves = new List<ElfFood?>();
             Elves.Add(Elf1);
             Elves.Add(Elf2);
             Elves.Add(Elf3);
 
+            // sort the list of ElfFood
+            Elves.Sort();
+
             // assert
+            Assert.True(Elves[0] < Elves[1], "The first elemennt isn't less than the second");
+            Assert.True(Elves[1] < Elves[2], "The second elemennt isn't less than the third");
         }
     }
 }
