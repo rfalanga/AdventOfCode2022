@@ -22,17 +22,29 @@
             Elf3.Calories.Add(10);
 
             // construct a list of ElfFood
-            var Elves = new List<ElfFood?>();
-            Elves.Add(Elf1);
-            Elves.Add(Elf2);
-            Elves.Add(Elf3);
+            var Elves = new List<ElfFood?>
+            {
+                Elf1,
+                Elf2,
+                Elf3
+            };
+            var ReverseElves = new List<ElfFood?>
+            {
+                Elf1,
+                Elf2,
+                Elf3
+            };
 
             // sort the list of ElfFood
             Elves.Sort();
+            ReverseElves.Sort();
+            ReverseElves.Reverse();
 
             // assert
-            Assert.True(Elves[0] < Elves[1], "The first elemennt isn't less than the second");
-            Assert.True(Elves[1] < Elves[2], "The second elemennt isn't less than the third");
+            Assert.True(Elves[0] < Elves[1], "The first element of Elves isn't less than the second");
+            Assert.True(Elves[1] < Elves[2], "The second element of Elves isn't less than the third");
+            Assert.True(ReverseElves[0] > ReverseElves[1], "The first element of ReverseElves isn't less than the second");
+            Assert.True(ReverseElves[1] > ReverseElves[2], "The second element of ReverseElves isn't less than the third");
         }
     }
 }
