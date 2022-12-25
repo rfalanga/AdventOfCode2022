@@ -48,6 +48,7 @@ int DoDay1Part2()
     return orderedList[0].TotalCalories() + orderedList[1].TotalCalories() + orderedList[2].TotalCalories();
 }
 
+// This is used, but where it's used is currently commented out. It is only needed for the commented out code.
 int MaximumCalories(List<ElfFood> list)
 {
     int max = 0;
