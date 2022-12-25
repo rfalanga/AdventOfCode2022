@@ -2,30 +2,28 @@
 
 using AdventOfCode2022;
 
-List<Day1Part1> day1Part1s = DoDay1Part1();
-Console.WriteLine($"Maximum calories an Elf is carry is: {MaximumCalories(day1Part1s)}");
+//List<ElfFood> day1Part1s = DoDay1Part1();
+//Console.WriteLine($"Maximum calories an Elf is carry is: {MaximumCalories(day1Part1s)}");
 
+Console.WriteLine($"The top 3 Elves total calories are {DoDay1Part2()}");
 
-//Read through the Day 1, Part 1 input file
-List<Day1Part1> DoDay1Part1()
+//Read through the Day 1, Part 1 input file. This returns the list of ElfFood in an unordered list
+List<ElfFood> DoDay1Part1()
 {
-    var tmpList = new List<Day1Part1>();
+    var tmpList = new List<ElfFood>();
 
-    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-    string txtFilePath = path.Replace("\\bin", "\\Assets\\Day1 input.txt");
-
-    string[] lines = File.ReadAllLines(txtFilePath);
+    string[] lines = ReadInputFile();
 
     //read through data, populating the list as needed
     int position = 0;
-    tmpList.Add(new Day1Part1());
+    tmpList.Add(new ElfFood());
     for (int i = 0; i < lines.Length; i++)
     {
         var line = lines[i];
 
         if (string.IsNullOrEmpty(line))
         {
-            tmpList.Add(new Day1Part1());
+            tmpList.Add(new ElfFood());
             position++;
         }
         else
@@ -38,7 +36,20 @@ List<Day1Part1> DoDay1Part1()
     return tmpList;
 }
 
-int MaximumCalories(List<Day1Part1> list)
+// Return the top 3 elves with calories
+int DoDay1Part2()
+{
+    var unOrderedElfFoodList = DoDay1Part1();
+    var orderedList = unOrderedElfFoodList;
+
+    orderedList.Sort();
+    orderedList.Reverse();
+
+    return orderedList[0].TotalCalories() + orderedList[1].TotalCalories() + orderedList[2].TotalCalories();
+}
+
+// This is used, but where it's used is currently commented out. It is only needed for the commented out code.
+int MaximumCalories(List<ElfFood> list)
 {
     int max = 0;
 
@@ -48,4 +59,15 @@ int MaximumCalories(List<Day1Part1> list)
     }
 
     return max;
+}
+
+static string[] ReadInputFile()
+{
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+    string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+    string txtFilePath = path.Replace("\\bin", "\\Assets\\Day1 input.txt");
+
+    string[] lines = File.ReadAllLines(txtFilePath);
+    return lines;
 }
