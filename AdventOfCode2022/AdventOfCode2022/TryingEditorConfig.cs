@@ -12,7 +12,6 @@ namespace AdventOfCode2022
      */
     internal class TryingEditorConfig
     {
-        int Add2(int x, int y)
-        { return x + y; }
+        int Add2(int x, int y) => x + y;
     }
 }
