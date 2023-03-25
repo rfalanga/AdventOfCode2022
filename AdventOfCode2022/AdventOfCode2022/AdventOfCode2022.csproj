@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\GitHub\AdventOfCode2022\AdventOfCode2022\AdventOfCode2022\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\GitHub\AdventOfCode2022\AdventOfCode2022\AdventOfCode2022\.editorconfig" />
+  </ItemGroup>
+
 </Project>
